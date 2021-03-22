@@ -1,4 +1,5 @@
 import turtle
+import random
 
 
 def balra():
@@ -17,15 +18,17 @@ def le():
     ship.sety(ship.ycor() - 30)
 
 
-def teleportx(amount):
+def teleportx(xamount, yamount):
     ship.hideturtle()
-    ship.setx(amount)
+    ship.setx(xamount)
+    ship.sety(random.randrange(-yamount, yamount))
     ship.showturtle()
 
 
-def teleporty(amount):
+def teleporty(yamount, xamount):
     ship.hideturtle()
-    ship.sety(amount)
+    ship.sety(yamount)
+    ship.setx(random.randrange(-xamount, xamount))
     ship.showturtle()
 
 
@@ -45,11 +48,11 @@ ship.penup()
 while True:
     space.listen()
     if ship.xcor() >= 400:
-        teleportx(-380)
+        teleportx(-380, 280)
     if ship.xcor() <= -400:
-        teleportx(380)
+        teleportx(380, 280)
     if ship.ycor() >= 300:
-        teleporty(-280)
+        teleporty(-280, 380)
     if ship.ycor() <= -300:
-        teleporty(280)
+        teleporty(280, 380)
     space.update()
