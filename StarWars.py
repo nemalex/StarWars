@@ -52,8 +52,16 @@ space.onkeypress(le, "Down")
 
 meteor=turtle.Turtle()
 meteor.shape("src/meteor2.gif")
-meteor.setposition(0, 0)
+meteor.hideturtle()
+meteor.setposition(400, 20)
+meteor.showturtle()
 meteor.penup()
+
+kijelzo = turtle.Turtle()
+kijelzo.color("white")
+kijelzo.hideturtle()
+kijelzo.penup()
+kijelzo.clear()
 
 ship = turtle.Turtle()
 ship.shape("src/sprite.gif")
@@ -72,4 +80,8 @@ while True:
         teleporty(-280, 380)
     if ship.ycor() <= -300:
         teleporty(280, 380)
+
+    if ship.distance(meteor.xcor(), meteor.ycor()) < 15:
+        kijelzo.write("Game Over", align="center", font=("Arial", 36, "bold"))
+        turtle.done()
     space.update()
