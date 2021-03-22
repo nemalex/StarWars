@@ -3,9 +3,10 @@ import random
 
 def meteorjobbbal():
     meteor.setx(meteor.xcor()-5)
+
 def randommeteor():
     meteor.hideturtle()
-    meteor.sety(random.randrange(-250, 250))
+    meteor.sety(random.randrange(-280, 280))
     meteor.setx(400)
     meteor.showturtle()
 
