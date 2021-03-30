@@ -1,5 +1,6 @@
 import turtle
 import random
+import winsound
 
 
 def meteorjobbbal():
@@ -115,6 +116,7 @@ while True:
     if ship.distance(meteor.xcor(), meteor.ycor()) < 15:
         randommeteor()
         healthpoints -= 1
+        winsound.PlaySound("src/explosion-01.wav", 1)
         healt_write(healthpoints)
 
     if healthpoints == 0:
