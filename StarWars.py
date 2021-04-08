@@ -118,10 +118,11 @@ while True:
         healthpoints -= 1
         winsound.PlaySound("src/explosion-01.wav", 1)
         healt_write(healthpoints)
+        if healthpoints == 0:
+            kijelzo.clear()
+            kijelzo.write("Game Over", align="center", font=("Arial", 36, "bold"))
+            turtle.done()
 
-    if healthpoints == 0:
-        kijelzo.clear()
-        kijelzo.write("Game Over", align="center", font=("Arial", 36, "bold"))
-        turtle.done()
+
 
     space.update()
